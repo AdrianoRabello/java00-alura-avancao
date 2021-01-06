@@ -5,9 +5,9 @@ package com.alura.avancado.javaoo;
  */
 public class GerenciadorDeDividas {
 
-    public void efetuaPagamento(Divida divida,String nomePagador, String cnpjPagador, double valor) {
+    public void efetuarPagamento(Divida divida,String nomePagador, String cnpjPagador, double valor) {
 
         Pagamento pagamento = new Pagamento(nomePagador, cnpjPagador, valor);
-        divida.registra(pagamento);
+        divida.getPagamentos().registra(pagamento);
     }
 }

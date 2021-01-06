@@ -2,6 +2,8 @@ package com.alura.avancado.javaoo;
 
 import lombok.Getter;
 
+import java.util.Calendar;
+
 /**
  * @autor Adriano Rabello 04/01/2021 - 3:46 PM
  */
@@ -12,6 +14,8 @@ public class Pagamento {
     private String pagador;
     private String cnpjPagador;
     private double valor;
+
+    private Calendar data;
 
 
     public Pagamento(){
@@ -47,5 +51,9 @@ public class Pagamento {
 
     public void setValor(double valor) {
         this.valor = valor;
+    }
+
+    public Calendar getData() {
+        return data;
     }
 }

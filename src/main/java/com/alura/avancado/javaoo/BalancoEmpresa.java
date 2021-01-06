@@ -23,7 +23,7 @@ public class BalancoEmpresa {
 
 
             Pagamento pagamento = new Pagamento(nomePagador,cnpjPagador, valor);
-            divida.registra(pagamento);
+            divida.getPagamentos().registra(pagamento);
 
         }
 
