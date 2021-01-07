@@ -8,6 +8,8 @@ public class GerenciadorDeDividas {
     public void efetuarPagamento(Divida divida,String nomePagador, String cnpjPagador, double valor) {
 
         Pagamento pagamento = new Pagamento(nomePagador, cnpjPagador, valor);
-        divida.getPagamentos().registra(pagamento);
+
+        /** eu consigo fazer isso pois pagamentos é uma classe e não um array list */
+        divida.registra(pagamento);
     }
 }

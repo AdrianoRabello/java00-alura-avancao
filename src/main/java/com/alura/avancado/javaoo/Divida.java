@@ -1,11 +1,5 @@
 package com.alura.avancado.javaoo;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-
-import java.util.ArrayList;
-import java.util.Calendar;
-
 /**
  * @autor Adriano Rabello 04/01/2021 - 3:30 PM
  */
@@ -15,7 +9,7 @@ public class Divida {
     private double total;
 
     private String credor;
-    private Cnpj cnpj = new Cnpj();
+    private Documento documentoCredor;
     private Pagamentos pagamentos = new Pagamentos();
 
 
@@ -23,10 +17,16 @@ public class Divida {
 
     }
 
-    public Divida(String credor, double valorPago, String cnpjCredor) {
+    public Divida(String credor, Documento documento) {
+
 
         this.credor = credor;
-        getCnpj().setValor(cnpjCredor);
+        this.setDocumentoCredor(documento);
+    }
+
+    /***/
+    public void registra(Pagamento pagamento) {
+        this.pagamentos.registra(pagamento);
     }
 
 
@@ -46,11 +46,15 @@ public class Divida {
         return this.total;
     }
 
-    public Cnpj getCnpj() {
-        return cnpj;
+    public void setDocumentoCredor(Documento documentoCredor) {
+        this.documentoCredor = documentoCredor;
     }
 
-    public Pagamentos getPagamentos() {
-        return pagamentos;
+    public Documento getDocumentoCredor() {
+        return documentoCredor;
+    }
+
+    public double getValorPago() {
+        return this.pagamentos.getValorPago();
     }
 }

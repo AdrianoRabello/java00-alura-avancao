@@ -1,10 +1,10 @@
 package com.alura.avancado.javaoo;
 
-public class Cnpj {
+public class Cnpj implements Documento{
 
     private String valor;
 
-    public boolean cnpjValido() {
+    public boolean ehValido() {
         return primeiroDigitoVerificador() == primeiroDigitoCorretoParaCnpj()
                 && segundoDigitoVerificadorDoCnpj() == segundoDigitoCorretoParaCnpj();
     }
@@ -36,5 +36,11 @@ public class Cnpj {
 
     public String getValor() {
         return valor;
+    }
+
+    @Override
+    public String
+    toString() {
+        return this.valor;
     }
 }

@@ -7,23 +7,22 @@ import java.util.HashMap;
  */
 public class BalancoEmpresa {
 
-    private HashMap<String, Divida> dividas = new HashMap<>();
+    private HashMap<Documento, Divida> dividas = new HashMap<>();
 
-    public void registraDivida(String credor, String cnpjCredor, double valor){
-
-        Divida divida = new Divida(credor, valor,cnpjCredor);
-        dividas.put(cnpjCredor,divida);
+    public void registraDivida(Divida divida) {
+        if (divida.getDocumentoCredor() != null) {
+            dividas.put(divida.getDocumentoCredor(), divida);
+        }
     }
 
-    public void pagaDivida(String cnpjCredor, double valor, String nomePagador,String cnpjPagador){
+    public void pagaDivida(Documento documentoCredor, Pagamento pagamento){
 
-        Divida divida = dividas.get(cnpjCredor);
+        Divida divida = dividas.get(documentoCredor);
 
         if(divida != null){
 
-
-            Pagamento pagamento = new Pagamento(nomePagador,cnpjPagador, valor);
-            divida.getPagamentos().registra(pagamento);
+            /** eu consigo fazer isso pois getPagamentos é uma classe e não um array */
+            divida.registra(pagamento);
 
         }
 

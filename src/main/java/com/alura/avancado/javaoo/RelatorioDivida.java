@@ -16,7 +16,7 @@ public class RelatorioDivida {
 
     public void geraRelatorio(){
 
-        System.out.println("cnpj credor " + this.divida.getCnpj().getValor());
+        System.out.println("cnpj credor " + this.divida.getDocumentoCredor().getValor());
         System.out.println("Credor " + this.divida.getCredor());
 
         NumberFormat numberFormat = NumberFormat.getInstance(new Locale("pt", "BR"));

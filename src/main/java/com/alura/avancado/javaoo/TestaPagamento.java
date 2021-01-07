@@ -12,11 +12,12 @@ public class TestaPagamento {
         pagamento1.setValor(105);
         pagamento2.setValor(25);
 
-        pagamentos.add(pagamento1);
-        pagamentos.add(pagamento2);
-
+        pagamentos.registra(pagamento1);
+        pagamentos.registra(pagamento2);
 
         System.out.println(pagamentos.getValorPago());
+
+
 
 
     }
